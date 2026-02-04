@@ -444,14 +444,16 @@ function Navbar({ menuOpen, setMenuOpen }) {
     <>
       <nav className={`pf-nav ${scrolled ? "scrolled" : ""}`}>
         <div className="container d-flex align-items-center justify-content-between">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>KB</a>
-          <div className="desktop-links d-flex gap-1">
-            {links.map((l) => <a key={l} href="#" className="nav-link" onClick={(e) => { e.preventDefault(); go(l); }}>{l}</a>)}
+        <button className="logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>KB</button>
+          {links.map((l) => (
+            <button key={l} className="nav-link" onClick={() => go(l)}>
+              {l}
+            </button>
+          ))}
           </div>
           <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
             <span /><span /><span />
           </div>
-        </div>
       </nav>
       {menuOpen && (
         <div className="mobile-nav-overlay open">
@@ -476,8 +478,14 @@ function Hero() {
         <div className="hero-role">Cloud & DevOps Engineer</div>
         <p className="hero-subtitle">Hands-on with AWS, CI/CD, Docker, and IaC. I build reliable, automated cloud infrastructure and keep systems observable end-to-end.</p>
         <div className="hero-cta">
-          <a href="#" className="btn-primary-custom" onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}>View Projects</a>
-          <a href="#" className="btn-outline-custom" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>Contact Me</a>
+          <button className="btn-primary-custom" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
+            View Projects
+          </button>
+
+          <button className="btn-outline-custom" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+            Contact Me
+          </button>
+
         </div>
       </div>
       <div className="scroll-hint"><span>Scroll</span><div className="line" /></div>
@@ -585,8 +593,9 @@ function Projects({ addRef }) {
                   <p>{p.desc}</p>
                   <div className="skill-tags">{p.tags.map((t) => <span className="skill-tag" key={t}>{t}</span>)}</div>
                   <div className="project-links">
-                    <a className="project-link">Live Demo →</a>
-                    <a className="project-link">GitHub →</a>
+                    <span className="project-link">Live Demo →</span>
+                    <span className="project-link">GitHub →</span>
+
                   </div>
                 </div>
               </div>
@@ -658,7 +667,7 @@ function Certifications({ addRef }) {
                   <h6>{c.title}</h6>
                   <p>{c.issuer}</p>
                 </div>
-                <a href="#" className="cert-link" onClick={(e) => e.preventDefault()}>View Certificate →</a>
+                <span className="cert-link">View Certificate →</span>
               </div>
             </div>
           ))}
@@ -699,8 +708,8 @@ function Contact({ addRef }) {
         </div>
         <div className="social-row reveal mt-4" ref={addRef}>
           {[
-            { label: "LinkedIn", icon: "in", href: "#" },
-            { label: "GitHub", icon: "🐙", href: "#" },
+            { label: "LinkedIn", icon: "in", href: "https://linkedin.com/in/koushikbijili" },
+            { label: "GitHub", icon: "🐙", href: "https://github.com/koushikbijili" },
             { label: "Email", icon: "✉", href: "mailto:koushikbijili48@gmail.com" },
           ].map((s) => (
             <a key={s.label} href={s.href} className="social-btn" title={s.label}>{s.icon}</a>
