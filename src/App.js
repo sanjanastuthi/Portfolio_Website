@@ -21,7 +21,7 @@ const FG2 = "rgba(241,245,249,0.55)";
 const FG3 = "rgba(241,245,249,0.28)";
 const BG0 = "#06060e";
 const BG1 = "#0b0d17";
-const BG2 = "#0f1120";
+// const BG2 = "#0f1120";
 const BD  = "rgba(241,245,249,0.07)";
 const BDH = "rgba(124,58,237,0.4)";
 const SANS = "'Inter',system-ui,sans-serif";
@@ -162,36 +162,6 @@ function SL({tag,title}) {
 }
 
 /* ── PIPELINE ANIMATION ─────────────────────────────────────── */
-function Pipeline({ steps, color=V }) {
-  const [step,setStep]=useState(0);
-  const c1=color, c1bg=color+"18", c1glow=color+"40";
-  useEffect(()=>{ setStep(0); const t=setInterval(()=>setStep(s=>(s+1)%steps.length),950); return()=>clearInterval(t); },[steps]);
-  return (
-    <div style={{padding:"1.4rem 1.8rem",overflowX:"auto"}}>
-      <div style={{display:"flex",alignItems:"center",width:"max-content",margin:"0 auto",gap:0}}>
-        {steps.map((s,i)=>(
-          <div key={i} style={{display:"flex",alignItems:"center"}}>
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:7}}>
-              <div style={{width:40,height:40,borderRadius:"50%",border:`1.5px solid ${step>=i?c1:BD}`,background:step>=i?c1bg:"transparent",display:"flex",alignItems:"center",justifyContent:"center",transition:"all .4s ease",boxShadow:step===i?`0 0 18px ${c1glow}`:"none",position:"relative"}}>
-                {step>i && <span style={{color:c1,fontSize:13,fontWeight:700}}>✓</span>}
-                {step===i && <div style={{width:9,height:9,borderRadius:"50%",background:c1,animation:"pulse .8s ease-in-out infinite"}}/>}
-                {step<i && <div style={{width:7,height:7,borderRadius:"50%",background:FG3}}/>}
-                {step===i && <div style={{position:"absolute",inset:-5,borderRadius:"50%",border:`1px solid ${c1}`,animation:"ring 1s ease-out infinite"}}/>}
-              </div>
-              <span style={{fontFamily:MONO,fontSize:"0.55rem",color:step>=i?FG2:FG3,letterSpacing:"0.03em",textAlign:"center",maxWidth:62,lineHeight:1.35}}>{s}</span>
-            </div>
-            {i<steps.length-1&&(
-              <div style={{width:44,height:1.5,background:BD,margin:"0 0 18px",position:"relative",overflow:"hidden"}}>
-                <div style={{position:"absolute",inset:0,background:c1,transform:`scaleX(${step>i?1:0})`,transformOrigin:"left",transition:"transform .4s ease"}}/>
-                {step===i&&<div style={{position:"absolute",top:"50%",transform:"translateY(-50%)",width:5,height:5,borderRadius:"50%",background:c1,animation:"packet .95s linear infinite",boxShadow:`0 0 7px ${c1}`}}/>}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* ── HERO GRID FLOOR ────────────────────────────────────────── */
 function GridFloor({mouse}) {
