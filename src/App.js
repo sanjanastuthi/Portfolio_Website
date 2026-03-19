@@ -351,7 +351,7 @@ function About() {
             {/* Stats */}
             <Reveal delay={240}>
               <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"1px",background:BD,border:`1px solid ${BD}`,borderRadius:10,overflow:"hidden",marginTop:".8rem"}}>
-                {[["3+","Projects"],["6mo","Internship"],["2","Certs"],["10+","Cloud Svcs"]].map(([n,l])=>(
+                {[["3+","Projects"],["6mo","Internship"],["2","Certs"],["♾️","Automation Mindset"]].map(([n,l])=>(
                   <div key={l} style={{background:BG1,padding:"1.2rem .8rem",textAlign:"center"}}>
                     <div style={{fontFamily:SANS,fontSize:"1.5rem",fontWeight:700,color:FG,letterSpacing:"-.03em",marginBottom:3}}>{n}</div>
                     <div style={{fontFamily:SANS,fontSize:".65rem",color:FG3,textTransform:"uppercase",letterSpacing:".08em"}}>{l}</div>
