@@ -161,8 +161,6 @@ function SL({tag,title}) {
   );
 }
 
-/* ── PIPELINE ANIMATION ─────────────────────────────────────── */
-
 /* ── HERO GRID FLOOR ────────────────────────────────────────── */
 function GridFloor({mouse}) {
   return (
@@ -223,19 +221,12 @@ function Hero({mouse}) {
 
       <GridFloor mouse={mouse}/>
 
-      {/* Top-left corner accent */}
       <div style={{position:"absolute",top:0,left:0,width:1,height:"40%",background:`linear-gradient(${V3},transparent)`,pointerEvents:"none"}}/>
       <div style={{position:"absolute",top:0,left:0,width:"20%",height:1,background:`linear-gradient(90deg,${V3},transparent)`,pointerEvents:"none"}}/>
       <div style={{position:"absolute",top:0,right:0,width:1,height:"25%",background:`linear-gradient(${BD},transparent)`,pointerEvents:"none"}}/>
       <div style={{position:"absolute",top:0,right:0,width:"15%",height:1,background:`linear-gradient(270deg,${BD},transparent)`,pointerEvents:"none"}}/>
 
-      {/* Content - shifts slightly with mouse for parallax feel */}
-      <div style={{
-        position:"relative",zIndex:2,textAlign:"center",maxWidth:720,width:"100%",
-        transform:`translate(${mouse.x*-6}px,${mouse.y*-4}px)`,
-        transition:"transform .12s ease",
-      }}>
-        {/* Status */}
+      <div style={{position:"relative",zIndex:2,textAlign:"center",maxWidth:720,width:"100%",transform:`translate(${mouse.x*-6}px,${mouse.y*-4}px)`,transition:"transform .12s ease"}}>
         <div style={{opacity:0,animation:"fadeUp .7s ease .1s forwards"}}>
           <div style={{display:"inline-flex",alignItems:"center",gap:8,fontFamily:MONO,fontSize:".62rem",color:G,letterSpacing:".15em",textTransform:"uppercase",border:"1px solid rgba(16,185,129,.22)",borderRadius:100,padding:"5px 14px",marginBottom:"2rem",background:"rgba(16,185,129,.05)"}}>
             <span style={{width:6,height:6,borderRadius:"50%",background:G,animation:"glow 1.8s ease-in-out infinite",display:"inline-block"}}/>
@@ -243,34 +234,24 @@ function Hero({mouse}) {
           </div>
         </div>
 
-        {/* Name — 3D depth effect via textShadow layers */}
         <div style={{opacity:0,animation:"fadeUp .7s ease .2s forwards"}}>
-          <h1 style={{
-            fontFamily:SANS,fontSize:"clamp(2.4rem,7vw,4.5rem)",fontWeight:800,color:FG,
-            letterSpacing:"-.04em",lineHeight:1.05,margin:"0 0 1.1rem",whiteSpace:"nowrap",
-            textShadow:`0 1px 0 rgba(124,58,237,.3), 0 2px 0 rgba(124,58,237,.2), 0 4px 0 rgba(124,58,237,.1), 0 8px 20px rgba(0,0,0,.5)`,
-            transform:`perspective(600px) rotateX(${mouse.y*3}deg) rotateY(${mouse.x*-3}deg)`,
-            transition:"transform .15s ease",
-          }}>
+          <h1 style={{fontFamily:SANS,fontSize:"clamp(2.4rem,7vw,4.5rem)",fontWeight:800,color:FG,letterSpacing:"-.04em",lineHeight:1.05,margin:"0 0 1.1rem",whiteSpace:"nowrap",textShadow:`0 1px 0 rgba(124,58,237,.3), 0 2px 0 rgba(124,58,237,.2), 0 4px 0 rgba(124,58,237,.1), 0 8px 20px rgba(0,0,0,.5)`,transform:`perspective(600px) rotateX(${mouse.y*3}deg) rotateY(${mouse.x*-3}deg)`,transition:"transform .15s ease"}}>
             Koushik Bijili
           </h1>
         </div>
 
-        {/* Role */}
         <div style={{opacity:0,animation:"fadeUp .7s ease .3s forwards"}}>
           <p style={{fontFamily:SANS,fontSize:"clamp(1rem,2.5vw,1.2rem)",color:FG2,margin:"0 0 1.6rem",lineHeight:1.5,fontWeight:400}}>
             <Typer/>
           </p>
         </div>
 
-        {/* Description */}
         <div style={{opacity:0,animation:"fadeUp .7s ease .4s forwards"}}>
           <p style={{fontFamily:SANS,fontSize:".93rem",lineHeight:1.88,color:FG3,maxWidth:500,margin:"0 auto 2.8rem"}}>
             I design and manage cloud-based systems with a focus on scalability and automation. Delivering solutions that are efficient, reliable, and ready for production use.
           </p>
         </div>
 
-        {/* CTAs */}
         <div style={{opacity:0,animation:"fadeUp .7s ease .5s forwards"}}>
           <div style={{display:"flex",gap:".9rem",justifyContent:"center",flexWrap:"wrap",marginBottom:"2.8rem"}}>
             <button onClick={()=>document.getElementById("projects")?.scrollIntoView({behavior:"smooth"})}
@@ -288,7 +269,6 @@ function Hero({mouse}) {
           </div>
         </div>
 
-        {/* Social links */}
         <div style={{opacity:0,animation:"fadeUp .7s ease .6s forwards"}}>
           <div style={{display:"flex",gap:"2rem",justifyContent:"center"}}>
             {[{l:"LinkedIn",u:"https://linkedin.com/in/koushikbijili"},{l:"GitHub",u:"https://github.com/koushikbijili"},{l:"Email",u:"mailto:koushikbijili48@gmail.com"}].map(s=>(
@@ -300,7 +280,6 @@ function Hero({mouse}) {
         </div>
       </div>
 
-      {/* Scroll cue */}
       <div style={{position:"absolute",bottom:"2.5rem",left:"50%",transform:"translateX(-50%)",display:"flex",flexDirection:"column",alignItems:"center",gap:6,zIndex:2,animation:"bob 2.5s ease-in-out infinite"}}>
         <span style={{fontFamily:MONO,fontSize:".55rem",color:FG3,letterSpacing:".15em",textTransform:"uppercase"}}>scroll</span>
         <div style={{width:1,height:40,background:`linear-gradient(${V3},transparent)`}}/>
@@ -313,7 +292,6 @@ function Hero({mouse}) {
 function About() {
   return(
     <section id="about" style={{padding:"8rem clamp(1.5rem,4vw,3rem)",background:BG1,position:"relative",overflow:"hidden"}}>
-      {/* Decorative corner lines */}
       <div style={{position:"absolute",top:0,right:"8%",width:1,height:120,background:`linear-gradient(${BD},transparent)`,pointerEvents:"none"}}/>
       <div style={{position:"absolute",top:0,right:"8%",width:80,height:1,background:`linear-gradient(270deg,${BD},transparent)`,pointerEvents:"none"}}/>
       <div style={{position:"absolute",bottom:0,left:"5%",width:1,height:100,background:`linear-gradient(transparent,${BD})`,pointerEvents:"none"}}/>
@@ -348,7 +326,6 @@ function About() {
               </p>
             </Reveal>
 
-            {/* Stats */}
             <Reveal delay={240}>
               <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"1px",background:BD,border:`1px solid ${BD}`,borderRadius:10,overflow:"hidden",marginTop:".8rem"}}>
                 {[["3+","Projects"],["6mo","Internship"],["2","Certs"],["♾️","Automation Mindset"]].map(([n,l])=>(
@@ -377,7 +354,6 @@ function About() {
 function Philosophy() {
   return(
     <section id="philosophy" style={{padding:"8rem clamp(1.5rem,4vw,3rem)",background:BG0,position:"relative",overflow:"hidden"}}>
-      {/* Subtle accent glow */}
       <div style={{position:"absolute",top:"30%",right:"-5%",width:400,height:400,borderRadius:"50%",background:`radial-gradient(circle,${V1},transparent 70%)`,filter:"blur(60px)",pointerEvents:"none"}}/>
       <div style={{maxWidth:1080,margin:"0 auto",position:"relative"}}>
         <Reveal><SL tag="02 — Philosophy" title="How I Work"/></Reveal>
@@ -433,49 +409,121 @@ function Skills() {
 
 /* ── EXPERIENCE ─────────────────────────────────────────────── */
 function Experience() {
-  return(
-    <section id="experience" style={{padding:"8rem clamp(1.5rem,4vw,3rem)",background:BG1}}>
-      <div style={{maxWidth:1080,margin:"0 auto"}}>
-        <div className="a2col" style={{display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"5rem",alignItems:"start"}}>
-          <Reveal><SL tag="04 — Experience" title="Where I've Worked"/></Reveal>
-          <div>
-            <Reveal>
-              <div style={{paddingBottom:"2.8rem",marginBottom:"2.8rem",borderBottom:`1px solid ${BD}`}}>
-                <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:".5rem",marginBottom:"1.2rem"}}>
-                  <div>
-                    <h3 style={{fontFamily:SANS,fontSize:"1rem",fontWeight:600,color:FG,margin:"0 0 .2rem",letterSpacing:"-.015em"}}>Cloud & DevOps Intern</h3>
-                    <p style={{fontFamily:SANS,fontSize:".82rem",color:FG3,margin:0}}>Visys Cloud Technologies · Hyderabad</p>
-                  </div>
-                  <span style={{fontFamily:MONO,fontSize:".6rem",color:V,background:V1,border:`1px solid ${V2}`,borderRadius:4,padding:"3px 10px",whiteSpace:"nowrap"}}>Sep 2025 – Feb 2026</span>
+  const timeline = [
+    {
+      type: "work",
+      period: "Sep 2025 – Feb 2026",
+      role: "Cloud & DevOps Intern",
+      org: "Visys Cloud Technologies",
+      location: "Hyderabad, Telangana",
+      color: V,
+      groups: [
+        {
+          label: "Ai4Bazaar — Website Generation & Deployment",
+          items: [
+            "Built Jenkins CI/CD pipelines for automated build and deployment workflows.",
+            "Deployed React frontend and Node.js backend in staging environments.",
+            "Configured NGINX reverse proxy and load balancing for internal application access.",
+            "Integrated PostgreSQL database connectivity for backend services.",
+            "Supported debugging, logging, and deployment issue resolution.",
+          ],
+        },
+        {
+          label: "VShiftX — Business Automation Platform",
+          items: [
+            "Deployed containerised applications using Docker.",
+            "Supported CI/CD pipeline execution and automation workflows.",
+            "Configured SSL, domain routing, and server-level configurations.",
+            "Managed Linux server setup and environment configuration.",
+            "Monitored applications and troubleshot system and network issues.",
+          ],
+        },
+        {
+          label: "Additional Responsibilities",
+          items: [
+            "Cloud services — EC2, S3, IAM, Route 53, ALB, Auto Scaling for application hosting.",
+            "Infrastructure provisioning using Terraform in guided environments.",
+            "Automated backups with shell scripts and cron jobs, storing data in S3.",
+            "User access and identity provisioning via IAM and Active Directory.",
+            "System troubleshooting and OS-level configuration including hardware recovery.",
+            "Onboarding and training new interns on DevOps tools and workflows.",
+          ],
+        },
+      ],
+    },
+    {
+      type: "edu",
+      period: "Oct 2020 – Jun 2024",
+      role: "Bachelor of Engineering",
+      org: "MVSR Engineering College",
+      location: "Hyderabad · Automobile Engineering · CGPA 7.26",
+      color: FG3,
+      groups: [],
+    },
+  ];
+
+  return (
+    <section id="experience" style={{ padding: "8rem clamp(1.5rem,4vw,3rem)", background: BG1 }}>
+      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+
+        <Reveal>
+          <SL tag="04 — Experience" title="Where I've Worked" />
+        </Reveal>
+
+        {/* Timeline */}
+        <div style={{ position: "relative" }}>
+          {/* Vertical line */}
+          <div style={{ position: "absolute", left: 7, top: 8, bottom: 8, width: 1, background: `linear-gradient(${V}60, ${BD} 80%)` }} />
+
+          {timeline.map((item, ti) => (
+            <Reveal key={ti} delay={ti * 100}>
+              <div style={{ display: "flex", gap: "2rem", marginBottom: ti < timeline.length - 1 ? "3.5rem" : 0 }}>
+
+                {/* Dot */}
+                <div style={{ flexShrink: 0, width: 15, display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 6 }}>
+                  <div style={{ width: 15, height: 15, borderRadius: "50%", background: item.type === "work" ? V : BG1, border: `2px solid ${item.type === "work" ? V : BD}`, boxShadow: item.type === "work" ? `0 0 0 4px ${V1}` : "none", flexShrink: 0, zIndex: 1 }} />
                 </div>
-                <div style={{display:"flex",flexDirection:"column",gap:".75rem"}}>
-                  {["Automated CI/CD workflows with Jenkins, improving deployment efficiency and reducing manual intervention.",
-                    "Designed and provisioned cloud infrastructure (compute, storage, networking, load balancing, auto scaling) for highly available deployments.",
-                    "Configured Prometheus metrics and visualised performance using Grafana dashboards.",
-                    "Managed user access, configured systems with access control and active directory."
-                  ].map((pt,i)=>(
-                    <div key={i} style={{display:"flex",gap:".75rem",alignItems:"flex-start"}}>
-                      <span style={{width:4,height:4,borderRadius:"50%",background:V,flexShrink:0,marginTop:8}}/>
-                      <span style={{fontFamily:SANS,fontSize:".88rem",lineHeight:1.8,color:FG2}}>{pt}</span>
+
+                {/* Content */}
+                <div style={{ flex: 1, paddingBottom: ".5rem" }}>
+                  {/* Role header */}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: ".5rem", marginBottom: item.groups.length ? "1.8rem" : 0 }}>
+                    <div>
+                      <h3 style={{ fontFamily: SANS, fontSize: "1.05rem", fontWeight: 700, color: FG, margin: "0 0 .25rem", letterSpacing: "-.02em", lineHeight: 1.2 }}>{item.role}</h3>
+                      <p style={{ fontFamily: SANS, fontSize: ".85rem", color: FG3, margin: "0 0 .1rem" }}>{item.org}</p>
+                      <p style={{ fontFamily: SANS, fontSize: ".78rem", color: FG3, margin: 0, opacity: .7 }}>{item.location}</p>
+                    </div>
+                    <span style={{ fontFamily: MONO, fontSize: ".58rem", color: item.type === "work" ? V : FG3, background: item.type === "work" ? V1 : "rgba(241,245,249,.04)", border: `1px solid ${item.type === "work" ? V2 : BD}`, borderRadius: 4, padding: "3px 10px", whiteSpace: "nowrap", marginTop: ".1rem" }}>
+                      {item.period}
+                    </span>
+                  </div>
+
+                  {/* Groups */}
+                  {item.groups.map((g, gi) => (
+                    <div key={gi} style={{ marginBottom: gi < item.groups.length - 1 ? "1.8rem" : 0 }}>
+                      {/* Group label */}
+                      <div style={{ display: "flex", alignItems: "center", gap: ".7rem", marginBottom: ".9rem" }}>
+                        <div style={{ height: 1, width: 20, background: V, opacity: .5, flexShrink: 0 }} />
+                        <span style={{ fontFamily: MONO, fontSize: ".6rem", color: V, letterSpacing: ".1em", textTransform: "uppercase", opacity: .85 }}>{g.label}</span>
+                      </div>
+                      {/* Items */}
+                      <div style={{ display: "flex", flexDirection: "column", gap: ".6rem" }}>
+                        {g.items.map((pt, pi) => (
+                          <div key={pi} style={{ display: "flex", gap: ".75rem", alignItems: "flex-start" }}>
+                            <span style={{ width: 4, height: 4, borderRadius: "50%", background: `rgba(241,245,249,.25)`, flexShrink: 0, marginTop: 7 }} />
+                            <span style={{ fontFamily: SANS, fontSize: ".86rem", lineHeight: 1.78, color: FG2 }}>{pt}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
+
               </div>
             </Reveal>
-            <Reveal delay={80}>
-              <div>
-                <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:".5rem",marginBottom:".5rem"}}>
-                  <div>
-                    <h3 style={{fontFamily:SANS,fontSize:"1rem",fontWeight:600,color:FG,margin:"0 0 .2rem",letterSpacing:"-.015em"}}>Bachelor of Engineering</h3>
-                    <p style={{fontFamily:SANS,fontSize:".82rem",color:FG3,margin:"0 0 .1rem"}}>MVSR Engineering College, Hyderabad</p>
-                    <p style={{fontFamily:SANS,fontSize:".82rem",color:FG3,margin:0}}>Automobile Engineering · CGPA 7.26</p>
-                  </div>
-                  <span style={{fontFamily:MONO,fontSize:".6rem",color:FG3,background:"rgba(241,245,249,.04)",border:`1px solid ${BD}`,borderRadius:4,padding:"3px 10px",whiteSpace:"nowrap"}}>2020 – 2024</span>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
@@ -487,10 +535,8 @@ function ProjectCard({p,i}) {
   return(
     <div ref={ref} style={{opacity:v?1:0,transform:v?"translateY(0)":"translateY(32px)",transition:`opacity .7s ease ${i*100}ms, transform .7s ease ${i*100}ms`}}>
       <Tilt depth={5} glow={`${p.color}18`} style={{background:BG1,borderRadius:12,overflow:"hidden"}}>
-        {/* Accent top bar */}
         <div style={{height:2,background:`linear-gradient(90deg,${p.color} 0%,transparent 55%)`}}/>
         <div style={{padding:"2.2rem"}}>
-          {/* Header */}
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"1rem",marginBottom:"1.3rem"}}>
             <div>
               <span style={{fontFamily:MONO,fontSize:".58rem",color:p.color,letterSpacing:".14em",opacity:.8}}>Project {p.n}</span>
@@ -504,19 +550,13 @@ function ProjectCard({p,i}) {
               GitHub →
             </a>
           </div>
-
-          {/* Desc */}
           <p style={{fontFamily:SANS,fontSize:".88rem",lineHeight:1.88,color:FG2,marginBottom:"1.6rem",paddingBottom:"1.6rem",borderBottom:`1px solid ${BD}`}}>{p.desc}</p>
-
-          {/* Stack */}
           <div style={{marginBottom:"1.8rem"}}>
             <p style={{fontFamily:MONO,fontSize:".58rem",color:FG3,letterSpacing:".12em",textTransform:"uppercase",margin:"0 0 .7rem"}}>Stack</p>
             <div style={{display:"flex",flexWrap:"wrap",gap:".38rem"}}>
               {p.stack.map((s,j)=><span key={j} style={{fontFamily:MONO,fontSize:".63rem",color:FG2,background:"rgba(241,245,249,.04)",border:`1px solid ${BD}`,borderRadius:4,padding:"3px 9px"}}>{s}</span>)}
             </div>
           </div>
-
-          {/* Arch + Built */}
           <div className="pgrid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"2rem"}}>
             <div>
               <p style={{fontFamily:MONO,fontSize:".58rem",color:FG3,letterSpacing:".12em",textTransform:"uppercase",margin:"0 0 .9rem"}}>Architecture</p>
@@ -548,7 +588,6 @@ function Projects() {
     <section id="projects" style={{padding:"8rem clamp(1.5rem,4vw,3rem)",background:BG0,position:"relative"}}>
       <div style={{maxWidth:1080,margin:"0 auto"}}>
         <Reveal><SL tag="05 — Projects" title="What I've Built"/></Reveal>
-
         <div style={{display:"flex",flexDirection:"column",gap:"1.5rem"}}>
           {PROJECTS.map((p,i)=><ProjectCard key={i} p={p} i={i}/>)}
         </div>
@@ -610,9 +649,7 @@ function Contact() {
   ];
   return(
     <section id="contact" style={{padding:"8rem clamp(1.5rem,4vw,3rem) 6rem",background:BG0,position:"relative",overflow:"hidden"}}>
-      {/* Bottom glow */}
       <div style={{position:"absolute",bottom:0,left:"50%",transform:"translateX(-50%)",width:600,height:200,background:`radial-gradient(ellipse,${V1},transparent 70%)`,pointerEvents:"none"}}/>
-
       <div style={{maxWidth:1080,margin:"0 auto",position:"relative"}}>
         <div className="a2col" style={{display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"5rem",alignItems:"start"}}>
           <Reveal>
@@ -623,7 +660,6 @@ function Contact() {
               <a href="https://linkedin.com/in/koushikbijili" target="_blank" rel="noreferrer" style={{fontFamily:SANS,fontSize:".82rem",fontWeight:500,color:FG2,border:`1px solid ${BD}`,textDecoration:"none",padding:"10px 22px",borderRadius:8,transition:"all .25s",display:"inline-block"}} onMouseEnter={e=>{e.currentTarget.style.color=FG;e.currentTarget.style.borderColor=BDH;}} onMouseLeave={e=>{e.currentTarget.style.color=FG2;e.currentTarget.style.borderColor=BD;}}>LinkedIn →</a>
             </div>
           </Reveal>
-
           <div style={{display:"flex",flexDirection:"column",gap:".65rem"}}>
             {contacts.map((c,i)=>(
               <Reveal key={i} delay={i*55}>
@@ -639,8 +675,6 @@ function Contact() {
             ))}
           </div>
         </div>
-
-        {/* Footer */}
         <div style={{marginTop:"5rem",paddingTop:"2rem",borderTop:`1px solid ${BD}`,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"1rem"}}>
           <span style={{fontFamily:MONO,fontSize:".58rem",color:FG3,letterSpacing:".08em"}}>KB. · Cloud & DevOps Engineer · {new Date().getFullYear()}</span>
           <div style={{display:"flex",gap:"1.5rem"}}>
@@ -694,7 +728,10 @@ export default function App() {
           .dnav{display:none!important;}
           .ham{display:block!important;}
           .a2col{grid-template-columns:1fr!important;gap:2.5rem!important;}
+          .exp2col{grid-template-columns:1fr!important;}
           .pgrid{grid-template-columns:1fr!important;gap:1.5rem!important;}
+          #experience [style*="gridTemplateColumns: 1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+          #experience [style*="gridColumn: 1 / 3"]{grid-column:1!important;}
           h1{white-space:normal!important;font-size:clamp(2rem,9vw,3rem)!important;}
         }
       `}</style>
