@@ -20,7 +20,6 @@ const FG2 = "rgba(240,253,250,0.58)";
 const FG3 = "rgba(240,253,250,0.28)";
 const BG0 = "#040d0c";
 const BG1 = "#071210";
-const BG2 = "#0b1a18";
 const BD  = "rgba(240,253,250,0.07)";
 const BDH = "rgba(13,148,136,0.4)";
 const SANS = "'Plus Jakarta Sans',system-ui,sans-serif";
