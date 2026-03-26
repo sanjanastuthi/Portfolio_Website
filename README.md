@@ -5,7 +5,7 @@ This project focuses on analysing retailtransaction data to uncover key insights
 ---
 
 ## 🧠 Key Objectives
-**Saless Performance:** Identify the highest and lowest performing product categories. 
+**Sales Performance:** Identify the highest and lowest performing product categories. 
 **Customer Segmentation:** Analyze demographics(Recency, Frequency and Monetory) to understand the core customer base.
 **Time-Series Analysis:** Detect monthly and seasonal trends in revenue and transaction volume.
 **Profitability:** Evaluatethe relationship between price per unit, quantity sold, and total revenue.
