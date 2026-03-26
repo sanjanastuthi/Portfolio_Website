@@ -1,39 +1,24 @@
-# 🚀 Cloud & DevOps Portfolio — Koushik Bijili
+# 🚀 Data Analyst Portfolio — Sanjanastuthi
 
-A production-focused portfolio showcasing real-world cloud infrastructure, automation, and DevOps practices.
-Built with a focus on scalability, reliability, and automated deployment workflows.
-
----
-
-## 🌐 Live Demo
-
-* https://koushikbijili.site
-* https://my-portfolio-website-six-navy.vercel.app/
+This project focuses on analysing retailtransaction data to uncover key insights into customer purchasing patterns, product performance, and seasonal sales trends. By leveraging data visualisation and statistical analysis, the goal is to provide actionable recommendations for inventory management and marketing strategies.
 
 ---
 
-## 🧠 What This Portfolio Demonstrates
+## 🧠 Key Objectives
+**Saless Performance:** Identify the highest and lowest performing product categories. 
+**Customer Segmentation:** Analyze demographics(Recency, Frequency and Monetory) to understand the core customer base.
+**Time-Series Analysis:** Detect monthly and seasonal trends in revenue and transaction volume.
+**Profitability:** Evaluatethe relationship between price per unit, quantity sold, and total revenue.
 
-* Infrastructure design using real-world cloud concepts
-* Deployment automation and CI/CD workflows
-* Scalable and reliable system architecture
-* Monitoring, failure handling, and recovery patterns
 
 ---
 
 ## 🏗️ Tech Stack
 
-### Frontend
-
-* React (Create React App)
-* Custom CSS
-
-### Cloud & DevOps
-
-* AWS (EC2, VPC, ALB, Auto Scaling, IAM)
-* Terraform (Infrastructure as Code)
-* Docker (Containerization)
-* Jenkins (CI/CD Pipelines)
+**Language:** Python(Pandas, Numpy)
+**Visualisation:** Matplotlib, Seaborn, PowerBI
+**Environment:** Jupyter Notebook
+**Storage:** Github
 
 ### Deployment
 
@@ -42,32 +27,11 @@ Built with a focus on scalability, reliability, and automated deployment workflo
 
 ---
 
-## 📂 Project Highlights
+## 📂 Insights & Findings
 
-### 1. Scalable Cloud Infrastructure (Terraform)
-
-* Designed AWS infrastructure using Terraform
-* Implemented VPC, subnets, NAT Gateway, ALB, Auto Scaling
-* Used S3 + DynamoDB for remote state management
-* Fully automated — no manual AWS console setup
-
----
-
-### 2. CI/CD Pipeline Automation
-
-* Built Jenkins pipeline (Build → Push → Deploy)
-* Integrated Docker for containerized deployments
-* Configured GitHub webhooks for automatic triggers
-* Eliminated manual deployment steps
-
----
-
-### 3. Self-Healing Infrastructure
-
-* Implemented Auto Scaling with Load Balancer
-* Configured CloudWatch monitoring and alarms
-* Integrated SNS for real-time alerts
-* Validated recovery using failure simulation
+ 1. There are more hibernating(unloyal) customers in february than in any other month.
+ 2. There is less amount of stock sold in june compared to other months.
+ 3. People are most likely tobuy their groceries in the month of april and january across the given countries.
 
 ---
 
@@ -76,7 +40,7 @@ Built with a focus on scalability, reliability, and automated deployment workflo
 Clone the repository:
 
 ```bash
-git clone https://github.com/koushikbijili/My-Portfolio-Website.git
+git clone https://github.com/sanjanastuthi/Portfolio-Website.git
 cd My-Portfolio-Website
 ```
 
@@ -119,34 +83,6 @@ This project is deployed using **Vercel**, with automatic CI/CD and HTTPS enable
 
 👉 Every push = automatic deployment
 
----
-
-### 🌐 Custom Domain
-
-```text
-https://koushikbijili.site
-```
-
-#### DNS Configuration
-
-* **A Record**
-
-  * Host: `@`
-  * Value: `76.76.21.21`
-
-* **CNAME Record**
-
-  * Host: `www`
-  * Value: `cname.vercel-dns.com`
-
----
-
-### 🔐 SSL & HTTPS
-
-* SSL certificates provided automatically by **Let’s Encrypt**
-* HTTPS enforced by default
-* Automatic certificate renewal
-* HTTP → HTTPS redirection enabled
 
 ---
 
@@ -161,21 +97,20 @@ https://koushikbijili.site
 
 ## 📬 Contact
 
-* Email: [koushikbijili48@gmail.com](mailto:koushikbijili48@gmail.com)
-* LinkedIn: https://linkedin.com/in/koushikbijili
-* GitHub: https://github.com/koushikbijili
+* Email: dablipuramsanjana@gmail.com
+* LinkedIn: https://www.linkedin.com/in/dablipuram-sanjanastuthi-923853320
+* GitHub: https://github.com/sanjanastuthi
 
 ---
 
 ## ⚡ Key Focus
 
-* Build scalable and reliable cloud systems
-* Automate infrastructure and deployments
-* Keep systems simple and production-ready
+* Clean and preprocess the data before visualisation
+* Keep data simple and understandable website
 * Focus on real-world problem solving
 
 ---
 
 ## 🧩 Note
 
-This portfolio reflects hands-on DevOps learning and real-world implementation of cloud infrastructure and automation practices.
+This portfolio reflects hands-on learning of visualisation and real-world implementation of data analysis and interactive dashboard presentation.
