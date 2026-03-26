@@ -1,74 +1,181 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 🚀 Cloud & DevOps Portfolio — Koushik Bijili
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A production-focused portfolio showcasing real-world cloud infrastructure, automation, and DevOps practices.
+Built with a focus on scalability, reliability, and automated deployment workflows.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+* https://koushikbijili.site
+* https://my-portfolio-website-six-navy.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 What This Portfolio Demonstrates
 
-### `npm test`
+* Infrastructure design using real-world cloud concepts
+* Deployment automation and CI/CD workflows
+* Scalable and reliable system architecture
+* Monitoring, failure handling, and recovery patterns
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🏗️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* React (Create React App)
+* Custom CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Cloud & DevOps
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* AWS (EC2, VPC, ALB, Auto Scaling, IAM)
+* Terraform (Infrastructure as Code)
+* Docker (Containerization)
+* Jenkins (CI/CD Pipelines)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Vercel (Hosting + CI/CD)
+* GitHub (Version Control)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# My-Portfolio-Website
->>>>>>> 68ad8fdad93ce489e4a93a0961bfe6f9c3cae5de
+## 📂 Project Highlights
+
+### 1. Scalable Cloud Infrastructure (Terraform)
+
+* Designed AWS infrastructure using Terraform
+* Implemented VPC, subnets, NAT Gateway, ALB, Auto Scaling
+* Used S3 + DynamoDB for remote state management
+* Fully automated — no manual AWS console setup
+
+---
+
+### 2. CI/CD Pipeline Automation
+
+* Built Jenkins pipeline (Build → Push → Deploy)
+* Integrated Docker for containerized deployments
+* Configured GitHub webhooks for automatic triggers
+* Eliminated manual deployment steps
+
+---
+
+### 3. Self-Healing Infrastructure
+
+* Implemented Auto Scaling with Load Balancer
+* Configured CloudWatch monitoring and alarms
+* Integrated SNS for real-time alerts
+* Validated recovery using failure simulation
+
+---
+
+## ⚙️ Local Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/koushikbijili/My-Portfolio-Website.git
+cd My-Portfolio-Website
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm start
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🚀 Deployment & Domain Setup
+
+This project is deployed using **Vercel**, with automatic CI/CD and HTTPS enabled.
+
+### 🔄 CI/CD Workflow
+
+1. Code is pushed to GitHub (`main` branch)
+2. Vercel detects changes automatically
+3. Runs:
+
+   ```bash
+   npm install
+   npm run build
+   ```
+4. Generates optimized production build
+5. Deploys globally via CDN
+
+👉 Every push = automatic deployment
+
+---
+
+### 🌐 Custom Domain
+
+```text
+https://koushikbijili.site
+```
+
+#### DNS Configuration
+
+* **A Record**
+
+  * Host: `@`
+  * Value: `76.76.21.21`
+
+* **CNAME Record**
+
+  * Host: `www`
+  * Value: `cname.vercel-dns.com`
+
+---
+
+### 🔐 SSL & HTTPS
+
+* SSL certificates provided automatically by **Let’s Encrypt**
+* HTTPS enforced by default
+* Automatic certificate renewal
+* HTTP → HTTPS redirection enabled
+
+---
+
+### ⚙️ Deployment Features
+
+* Zero-downtime deployments
+* Automatic rebuild on every push
+* Global CDN distribution
+* No manual server management
+
+---
+
+## 📬 Contact
+
+* Email: [koushikbijili48@gmail.com](mailto:koushikbijili48@gmail.com)
+* LinkedIn: https://linkedin.com/in/koushikbijili
+* GitHub: https://github.com/koushikbijili
+
+---
+
+## ⚡ Key Focus
+
+* Build scalable and reliable cloud systems
+* Automate infrastructure and deployments
+* Keep systems simple and production-ready
+* Focus on real-world problem solving
+
+---
+
+## 🧩 Note
+
+This portfolio reflects hands-on DevOps learning and real-world implementation of cloud infrastructure and automation practices.
